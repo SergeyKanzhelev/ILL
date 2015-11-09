@@ -38,24 +38,21 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvcMusicStore\MvcMusicStore.csproj">
-      <Name>MvcMusicStore</Name>
-      <Project>{32dcd27d-a84c-4250-b657-408b3620a9ac}</Project>
+    <Folder Include="DemoApplicationContent\" />
+    <Folder Include="Profiles" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoApplication\DemoApplication.csproj">
+      <Name>DemoApplication</Name>
+      <Project>{9555ab20-8041-4ef7-b4b0-4709a4cebffe}</Project>
       <Private>True</Private>
       <RoleType>Web</RoleType>
-      <RoleName>MvcMusicStore</RoleName>
+      <RoleName>DemoApplication</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MvcMusicStoreContent\" />
-    <Folder Include="Profiles" />
-  </ItemGroup>
-  <ItemGroup>
-    <DiagnosticsConfiguration Include="MvcMusicStoreContent\diagnostics.wadcfgx" />
-  </ItemGroup>
-  <ItemGroup>
-    <PublishProfile Include="Profiles\ILLMVCMusicStoreProduction.azurePubxml" />
+    <DiagnosticsConfiguration Include="DemoApplicationContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
