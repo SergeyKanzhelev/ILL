@@ -7,6 +7,13 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCloudService", "AzureC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoApplication\DemoApplication.csproj", "{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32F0A11C-DFB9-4D03-B6CB-A1EC680F549B}"
+	ProjectSection(SolutionItems) = preProject
+		crashdumps.wadcfgx = crashdumps.wadcfgx
+		deploy.ps1 = deploy.ps1
+		EnableWAD.ps1 = EnableWAD.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
