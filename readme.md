@@ -20,7 +20,7 @@ You should be familiar with Azure Cloud Services and should have basic debugging
 
 1. [Enable Application Insights for the demo application](docs/EnableApplicationInsights.md)
 2. [Deploy the demo application to Azure](docs/DeployToAzure.md)
-3. [Mitigate the problem](docs/MitigateTheProblem.md)
-4. [Get crash dump](docs/EnableWAD.md)
-5. [Troubleshoot the issue](docs/TroubleshootTheIssue.md)
+3. [Get crash dump](docs/EnableWAD.md)
+4. [Troubleshoot the issue](docs/TroubleshootTheIssue.md)
+5. [Mitigate the problem](docs/MitigateTheProblem.md)
 
