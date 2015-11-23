@@ -8,8 +8,8 @@
 	``` powershell
 	Add-AzureAccount
 	```
-	
- 4. Run command
+
+4. Run command
   
 	``` powershell
 	Set-AzureSubscription -SubscriptionName "AI - SRT- Dev - 3" -CurrentStorageAccountName "sergkanz"
