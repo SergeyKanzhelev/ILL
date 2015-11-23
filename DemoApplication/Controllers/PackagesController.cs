@@ -1,5 +1,8 @@
 ﻿using DemoApplication.Models;
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 using NuGet;
+using SignalRChat;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,9 +34,7 @@ namespace DemoApplication.Controllers
                     IPackageRepository repo = PackageRepositoryFactory.Default.CreateRepository("https://packages.nuget.org/api/v2");
                     List<IPackage> packages = repo.Search(q, true).ToList();
 
-                    this.packagesList.AddPackage += List_AddPackage;
-
-                    foreach(var p in packages)
+                    foreach (var p in packages)
                     {
                         if (!this.packagesList.Contains(p.Id))
                         {
@@ -46,30 +47,6 @@ namespace DemoApplication.Controllers
             t.Start();
 
             return Process.GetCurrentProcess().Id.ToString();
-        }
-
-        private static void List_AddPackage(PackagesList self, IPackage package)
-        {
-            Task t = new Task(
-            //Thread t = new Thread(new ThreadStart(
-                () =>
-                {
-                    foreach (var dependencySet in package.DependencySets)
-                    {
-                        foreach (var dependency in dependencySet.Dependencies)
-                        {
-                            if (!self.Contains(dependency.Id))
-                            {
-                                IPackageRepository repo = PackageRepositoryFactory.Default.CreateRepository("https://packages.nuget.org/api/v2");
-
-                                self.AddRange(repo.FindPackagesById(dependency.Id));
-                                Console.WriteLine("Add dependency " + dependency.Id + "  for: " + package.Id);
-                            }
-                        }
-                    }
-                });
-
-            t.Start();
         }
     }
 }

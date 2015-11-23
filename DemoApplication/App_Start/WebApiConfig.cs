@@ -11,7 +11,7 @@ namespace DemoApplication
         public static void Register(HttpConfiguration config)
         {
             var container = new UnityContainer();
-            container.RegisterType<PackagesList, PackagesList>(new HierarchicalLifetimeManager());
+            container.RegisterType<PackagesList, PackagesList>(new ContainerControlledLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
