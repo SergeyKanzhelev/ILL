@@ -27,7 +27,7 @@
 		New-AzureService -ServiceName $serviceName -Location $serviceLocation -ErrorVariable errPrimaryService -Verbose:$false 
 	}
 	
-	New-AzureDeployment -ServiceName $serviceName -Slot production -Package (Resolve-Path .\CloudServiceWithLB\bin\Release\app.publish\CloudServiceWithLB.cspkg) -Configuration (Resolve-Path .\CloudServiceWithLB\bin\Release\app.publish\ServiceConfiguration.Cloud.cscfg) -Label "automatic deployment - (Get-Date)"
+	New-AzureDeployment -ServiceName $serviceName -Slot production -Package (Resolve-Path .\CloudServiceDefinition\bin\Release\app.publish\CloudServiceDefinition.cspkg) -Configuration (Resolve-Path .\CloudServiceDefinition\bin\Release\app.publish\ServiceConfiguration.Cloud.cscfg) -Label "automatic deployment - (Get-Date)"
 	```
 	
 6. See telemetry in Application Insights. Notice new roleInstance in servers page.

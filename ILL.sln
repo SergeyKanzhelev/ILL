@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24706.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "AzureCloudService", "AzureCloudService\AzureCloudService.ccproj", "{F9B3C392-63EE-401D-8A4B-2F8441A21E63}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoApplication\DemoApplication.csproj", "{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32F0A11C-DFB9-4D03-B6CB-A1EC680F549B}"
@@ -15,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CloudServiceWithLB", "CloudServiceWithLB\CloudServiceWithLB.ccproj", "{0FF95FC4-7C93-41EB-9CCD-A52C783BA245}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CloudServiceDefinition", "CloudServiceDefinition\CloudServiceDefinition.ccproj", "{0FF95FC4-7C93-41EB-9CCD-A52C783BA245}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9B3C392-63EE-401D-8A4B-2F8441A21E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9B3C392-63EE-401D-8A4B-2F8441A21E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9B3C392-63EE-401D-8A4B-2F8441A21E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9B3C392-63EE-401D-8A4B-2F8441A21E63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU

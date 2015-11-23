@@ -7,7 +7,7 @@ $deploymentSlot = "Production"
 $serviceName = "ILL-demo"
 $serviceLocation = "South Central US"
 #$configPath = ((Resolve-Path .\).Path) + "\crashdumps.wadcfgx"
-$configPath = ((Resolve-Path .\).Path) + "\CloudServiceWithLB\DemoApplicationContent\diagnostics.wadcfgx"
+$configPath = ((Resolve-Path .\).Path) + "\CloudServiceDefinition\DemoApplicationContent\diagnostics.wadcfgx"
 
 
 $storageContext = New-AzureStorageContext –StorageAccountName $storage_name –StorageAccountKey $key

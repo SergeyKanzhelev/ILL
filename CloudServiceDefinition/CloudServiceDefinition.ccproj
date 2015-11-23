@@ -8,10 +8,10 @@
     <ProjectGuid>0ff95fc4-7c93-41eb-9ccd-a52c783ba245</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CloudServiceWithLB</RootNamespace>
-    <AssemblyName>CloudServiceWithLB</AssemblyName>
+    <RootNamespace>CloudServiceDefinition</RootNamespace>
+    <AssemblyName>CloudServiceDefinition</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>CloudServiceWithLB</Name>
+    <Name>CloudServiceDefinition</Name>
     <PackageEnableRemoteDebugger>False</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
