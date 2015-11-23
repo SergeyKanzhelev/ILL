@@ -3,21 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Advanced Azure Diagnostics with Application Insights</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>Process ID: <b>@System.Diagnostics.Process.GetCurrentProcess().Id.ToString()</b></p>
             <p>&copy; @DateTime.Now.Year - Microsoft</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
