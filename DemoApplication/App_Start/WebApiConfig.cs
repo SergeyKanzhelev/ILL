@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using DemoApplication.App_Start;
+using DemoApplication.Controllers;
+using DemoApplication.Models;
+using Microsoft.Practices.Unity;
 using System.Web.Http;
-using Newtonsoft.Json.Serialization;
 
 namespace DemoApplication
 {
@@ -11,6 +10,11 @@ namespace DemoApplication
     {
         public static void Register(HttpConfiguration config)
         {
+            var container = new UnityContainer();
+            container.RegisterType<PackagesList, PackagesList>(new HierarchicalLifetimeManager());
+            container.RegisterType<PackagesController>();
+            config.DependencyResolver = new UnityResolver(container);
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -19,6 +23,7 @@ namespace DemoApplication
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }
