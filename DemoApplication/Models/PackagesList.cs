@@ -26,7 +26,6 @@ namespace DemoApplication.Models
             }
         }
 
-
         public bool Contains(string id)
         {
             bool result = false;

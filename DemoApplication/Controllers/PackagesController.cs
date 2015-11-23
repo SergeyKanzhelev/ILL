@@ -25,21 +25,33 @@ namespace DemoApplication.Controllers
         // GET api/values?q=Microsoft.ApplicationInsights
         public string Get([FromUri]string q)
         {
-            IPackageRepository repo = PackageRepositoryFactory.Default.CreateRepository("https://packages.nuget.org/api/v2");
+            Thread t = new Thread(new ThreadStart(
+                () =>
+                {
+                    IPackageRepository repo = PackageRepositoryFactory.Default.CreateRepository("https://packages.nuget.org/api/v2");
+                    List<IPackage> packages = repo.Search(q, true).ToList();
 
-            List<IPackage> packages = repo.Search(q, true).ToList();
+                    this.packagesList.AddPackage += List_AddPackage;
 
-            this.packagesList.AddPackage += List_AddPackage;
+                    foreach(var p in packages)
+                    {
+                        if (!this.packagesList.Contains(p.Id))
+                        {
+                            this.packagesList.Add(p);
+                        }
+                        Thread.Sleep(10);
+                    }
+                }));
 
-            this.packagesList.AddRange(packages);
+            t.Start();
 
             return Process.GetCurrentProcess().Id.ToString();
         }
 
         private static void List_AddPackage(PackagesList self, IPackage package)
         {
-            //Task t = new Task(
-            ThreadStart ts = new ThreadStart(
+            Task t = new Task(
+            //Thread t = new Thread(new ThreadStart(
                 () =>
                 {
                     foreach (var dependencySet in package.DependencySets)
@@ -56,7 +68,6 @@ namespace DemoApplication.Controllers
                         }
                     }
                 });
-            Thread t = new Thread(ts);
 
             t.Start();
         }
