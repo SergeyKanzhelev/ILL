@@ -12,7 +12,6 @@ namespace DemoApplication
         {
             var container = new UnityContainer();
             container.RegisterType<PackagesList, PackagesList>(new HierarchicalLifetimeManager());
-            container.RegisterType<PackagesController>();
             config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes

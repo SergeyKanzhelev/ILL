@@ -7,13 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoAppl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32F0A11C-DFB9-4D03-B6CB-A1EC680F549B}"
 	ProjectSection(SolutionItems) = preProject
-		crashdumps.wadcfgx = crashdumps.wadcfgx
-		deploy.ps1 = deploy.ps1
-		EnableWAD.ps1 = EnableWAD.ps1
 		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CloudServiceDefinition", "CloudServiceDefinition\CloudServiceDefinition.ccproj", "{0FF95FC4-7C93-41EB-9CCD-A52C783BA245}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4C67BA31-82CF-48A0-B3FC-BA22A1D5F8F2}"
+	ProjectSection(SolutionItems) = preProject
+		docs\DeployToAzure.md = docs\DeployToAzure.md
+		docs\EnableApplicationInsights.md = docs\EnableApplicationInsights.md
+		docs\EnableWAD.md = docs\EnableWAD.md
+		docs\MitigateTheProblem.md = docs\MitigateTheProblem.md
+		docs\TroubleshootTheIssue.md = docs\TroubleshootTheIssue.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +38,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C67BA31-82CF-48A0-B3FC-BA22A1D5F8F2} = {32F0A11C-DFB9-4D03-B6CB-A1EC680F549B}
 	EndGlobalSection
 EndGlobal
