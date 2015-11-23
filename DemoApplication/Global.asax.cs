@@ -14,7 +14,14 @@ namespace DemoApplication
     {
         protected void Application_Start()
         {
-            TelemetryConfiguration.Active.InstrumentationKey = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+            try
+            {
+                TelemetryConfiguration.Active.InstrumentationKey = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+            }
+            catch (Exception)
+            {
+                // It seems that the app is not running from emulator or in the cloud. No telemetry wll be send
+            }
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
