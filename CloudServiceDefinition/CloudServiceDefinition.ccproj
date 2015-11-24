@@ -44,7 +44,7 @@
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>DemoApplication</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -52,10 +52,10 @@
     <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
-    <DiagnosticsConfiguration Include="DemoApplicationContent\diagnostics.wadcfgx" />
+    <PublishProfile Include="Profiles\ILL-demoProduction.azurePubxml" />
   </ItemGroup>
   <ItemGroup>
-    <PublishProfile Include="Profiles\ILL-demoProduction.azurePubxml" />
+    <DiagnosticsConfiguration Include="DemoApplicationContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
