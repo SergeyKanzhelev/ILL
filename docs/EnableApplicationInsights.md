@@ -39,13 +39,14 @@ In this step you will enable Application Insights for the demo applicaiton.
 	```
 
 9. In cloud service project double click on ```DemoApplication``` role name node.
-10. Tick the checkbox "Enable diagnostics" and then "Send diagnostics data to Application Insights". In opened window select "Manually specified Application Insights instumentation key" and paste instrumentaiton key.
-11. Open ```Global.asax``` file. Add the following instrumentaiton key initialization:
+10. Tick the checkbox *Enable diagnostics* and then *Send diagnostics data to Application Insights*. In opened window select *Manually specified Application Insights instumentation key* and paste instrumentaiton key.
+11. Open `Global.asax` file. Add the following instrumentaiton key initialization and resolve missing `using` statements:
 
 	``` csharp
 	try
 	{
-		TelemetryConfiguration.Active.InstrumentationKey = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+		TelemetryConfiguration.Active.InstrumentationKey =
+		    RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
 	}
 	catch (Exception)
 	{
@@ -54,3 +55,8 @@ In this step you will enable Application Insights for the demo applicaiton.
 	```
 
 12. Run application again. Now you'll see Application Insights telemetry in the portal.
+
+##Additional links
+
+- Enable [Application Insights for cloud services](https://azure.microsoft.com/documentation/articles/app-insights-cloudservices/)
+- Azure diagnostics [integration with Application Insights](https://azure.microsoft.com/blog/azure-diagnostics-integration-with-application-insights/)
