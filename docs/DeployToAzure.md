@@ -9,26 +9,34 @@
 	Add-AzureAccount
 	```
 
+4. List azure subscriptions and select subscription you plan to use for this excersize:
+
+	``` powershell
+	Get-AzureSubscription
+	Select-AzureSubscription -SubscriptionName "AI - SRT- Dev - 3"
+	```
+5. Create new storage account
+
+	``` powershell
+	New-AzureStorageAccount -StorageAccountName "illdemo" -Location "South Central US"
+	```
+
 4. Run command
   
 	``` powershell
-	Set-AzureSubscription -SubscriptionName "AI - SRT- Dev - 3" -CurrentStorageAccountName "sergkanz"
+	Set-AzureSubscription -SubscriptionName "AI - SRT- Dev - 3" -CurrentStorageAccountName "illdemo"
 	```
 	
 5. Run command
  
 	``` powershell
 	$serviceName = "ILL-demo"
-	$serviceLocation = "South Central US"
-	$service = Get-AzureService -ServiceName $serviceName -ErrorVariable errPrimaryService -Verbose:$false -ErrorAction "SilentlyContinue"
-
-	if ($service -eq $null)
-	{
-		New-AzureService -ServiceName $serviceName -Location $serviceLocation -ErrorVariable errPrimaryService -Verbose:$false 
-	}
+	
+	New-AzureService -ServiceName $serviceName -Location "South Central US"
 	
 	New-AzureDeployment -ServiceName $serviceName -Slot production -Package (Resolve-Path .\CloudServiceDefinition\bin\Release\app.publish\CloudServiceDefinition.cspkg) -Configuration (Resolve-Path .\CloudServiceDefinition\bin\Release\app.publish\ServiceConfiguration.Cloud.cscfg) -Label "automatic deployment - (Get-Date)"
 	```
-	
-6. See telemetry in Application Insights. Notice new roleInstance in servers page.
-7. Run the page http://ill-demo.cloudapp.net/api/values?q=Microsoft
+
+6. Wait till role will start
+7. Run the page http://ill-demo.cloudapp.net
+8. See telemetry in Application Insights. Notice new roleInstance in servers page.
