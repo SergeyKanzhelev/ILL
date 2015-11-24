@@ -11,6 +11,7 @@ You should be familiar with Azure Cloud Services and should have basic debugging
 
 ### Prerequisites
 - Visual Studio 2015
+- Git tools
 - Azure powershell
 - Azure SDK 2.8
 - Azure account
@@ -23,4 +24,3 @@ You should be familiar with Azure Cloud Services and should have basic debugging
 3. [Get crash dump](docs/EnableWAD.md)
 4. [Troubleshoot the issue](docs/TroubleshootTheIssue.md)
 5. [Mitigate the problem](docs/MitigateTheProblem.md)
-
