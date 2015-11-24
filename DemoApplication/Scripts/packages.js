@@ -24,3 +24,13 @@
         });
     });
 });
+
+function getPackages(searchTerm) {
+    $.get("/api/packages?q=" + searchTerm);
+}
+
+$(function () {
+    $('#search_1').click(function () { getPackages("Microsoft.ApplicationInsights.Web"); });
+    $('#search_2').click(function () { getPackages("Microsoft.ApplicationInsights"); });
+    $('#search_3').click(function () { getPackages("Microsoft"); });
+});
