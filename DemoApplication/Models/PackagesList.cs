@@ -17,15 +17,6 @@ namespace DemoApplication.Models
             this.AddPackage(this, package);
         }
 
-        public void AddRange(IEnumerable<IPackage> packageList)
-        {
-            this.packages.AddRange(packageList);
-            foreach (var p in packageList)
-            {
-                this.AddPackage(this, p);
-            }
-        }
-
         public bool Contains(string id)
         {
             bool result = false;

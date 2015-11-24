@@ -3,9 +3,14 @@
     var chat = $.connection.chatHub;
     // Create a function that the hub can call to broadcast messages.
     chat.client.broadcastMessage = function (name, message) {
-        //var encodedMsg = $('<div />').text(message).html();
+        var encodedMsg = $('<div style="display:block;"/>').text(message);
         // Add the message to the page.
-        $('#discussion').append(message + "<br/>");
+
+        if ($('#discussion > div').length > 18){
+            $('#discussion div:first-child').remove();
+        }
+
+        $('#discussion').append(encodedMsg);
     };
     // Set initial focus to message input box.
     $('#message').focus();
