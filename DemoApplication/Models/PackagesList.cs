@@ -5,16 +5,16 @@ namespace DemoApplication.Models
 {
     public class PackagesList
     {
-        private IList<IPackage> packages = new List<IPackage>();
+        private IDictionary<string, string> packages = new Dictionary<string, string>();
 
-        public delegate void AddPackageDelegate(PackagesList self, IPackage package);
+        public delegate void AddPackageDelegate(PackagesList self, string query, IPackage package);
 
         public event AddPackageDelegate AddPackage;
 
-        public void Add(IPackage package)
+        public void Add(string query, IPackage package)
         {
-            this.packages.Add(package);
-            this.AddPackage(this, package);
+            this.packages.Add(package.Id, query);
+            this.AddPackage(this, query, package);
         }
 
         public bool Contains(string id)
@@ -23,7 +23,7 @@ namespace DemoApplication.Models
 
             foreach (var package in this.packages)
             {
-                if (package.Id == id)
+                if (package.Key == id)
                 {
                     result = true;
                 }

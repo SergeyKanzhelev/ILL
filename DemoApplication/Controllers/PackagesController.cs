@@ -1,16 +1,9 @@
 ﻿using DemoApplication.Models;
-using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
 using NuGet;
-using SignalRChat;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace DemoApplication.Controllers
@@ -38,7 +31,7 @@ namespace DemoApplication.Controllers
                     {
                         if (!this.packagesList.Contains(p.Id))
                         {
-                            this.packagesList.Add(p);
+                            this.packagesList.Add("Search '" + q + "'", p);
                         }
                         Thread.Sleep(10);
                     }

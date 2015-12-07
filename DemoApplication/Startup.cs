@@ -27,7 +27,7 @@ namespace DemoApplication
             app.MapSignalR();
         }
 
-        private static void List_AddPackage(PackagesList self, IPackage package)
+        private static void List_AddPackage(PackagesList self, string query, IPackage package)
         {
             Task t = new Task(
             //Thread t = new Thread(new ThreadStart(
@@ -44,8 +44,7 @@ namespace DemoApplication
 
                                 if (!self.Contains(dependency.Id))
                                 {
-                                    self.Add(dependencyPackage);
-                                    Console.WriteLine("Add dependency " + dependency.Id + "  for: " + package.Id);
+                                    self.Add("Dependency of " + package.Id, dependencyPackage);
                                 }
                             }
                         }

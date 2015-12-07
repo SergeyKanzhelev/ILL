@@ -19,7 +19,7 @@ namespace SignalRChat
             this.packagesList.AddPackage += PackagesList_AddPackage;
         }
 
-        private void PackagesList_AddPackage(PackagesList self, NuGet.IPackage package)
+        private void PackagesList_AddPackage(PackagesList self, string query, NuGet.IPackage package)
         {
             this.Send("automation", package.Id);
         }

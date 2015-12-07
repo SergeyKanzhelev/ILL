@@ -8,5 +8,5 @@
             $("#heartbeat").text("failed to connect");
             $("#status").attr("class", "glyphicon glyphicon-remove");
         });
-    }, 1000);
+    }, 5000);
 });

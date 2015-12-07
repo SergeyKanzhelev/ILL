@@ -209,7 +209,6 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Scripts\heartbeat.js" />
     <Content Include="Scripts\packages.js" />
     <Content Include="Web.config">
@@ -230,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Results\" />
   </ItemGroup>
   <ItemGroup>
