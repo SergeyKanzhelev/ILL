@@ -5,7 +5,13 @@ namespace DemoApplication.Models
 {
     public class PackagesList
     {
-        private IDictionary<string, string> packages = new Dictionary<string, string>();
+        private class PackageEntry
+        {
+            public string Id;
+            public string Query; 
+        }
+
+        private IList<PackageEntry> packages = new List<PackageEntry>();
 
         public delegate void AddPackageDelegate(PackagesList self, string query, IPackage package);
 
@@ -13,7 +19,7 @@ namespace DemoApplication.Models
 
         public void Add(string query, IPackage package)
         {
-            this.packages.Add(package.Id, query);
+            this.packages.Add(new PackageEntry() { Id = package.Id, Query = query});
             this.AddPackage(this, query, package);
         }
 
@@ -23,7 +29,7 @@ namespace DemoApplication.Models
 
             foreach (var package in this.packages)
             {
-                if (package.Key == id)
+                if (package.Id == id)
                 {
                     result = true;
                 }
