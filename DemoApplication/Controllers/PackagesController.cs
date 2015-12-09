@@ -12,6 +12,8 @@ namespace DemoApplication.Controllers
     {
         private readonly PackagesList packagesList;
 
+        private static object packagesListLock = new object();
+
         public PackagesController(PackagesList list)
         {
             this.packagesList = list;
@@ -29,9 +31,12 @@ namespace DemoApplication.Controllers
 
                     foreach (var p in packages)
                     {
-                        if (!this.packagesList.Contains(p.Id))
+                        lock (packagesListLock)
                         {
-                            this.packagesList.Add("Search '" + q + "'", p);
+                            if (!this.packagesList.Contains(p.Id))
+                            {
+                                this.packagesList.Add("Search '" + q + "'", p);
+                            }
                         }
                         Thread.Sleep(10);
                     }
