@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoApplication\DemoApplication.csproj", "{9555AB20-8041-4EF7-B4B0-4709A4CEBFFE}"
 EndProject
@@ -19,6 +19,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4C67BA31-8
 		docs\EnableWAD.md = docs\EnableWAD.md
 		docs\MitigateTheProblem.md = docs\MitigateTheProblem.md
 		docs\TroubleshootTheIssue.md = docs\TroubleshootTheIssue.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS", "PS", "{F4008DA7-FADE-4E57-BC1D-BE254D268A1E}"
+	ProjectSection(SolutionItems) = preProject
+		00-Constants.ps1 = 00-Constants.ps1
+		01-ConnectToSubscription.ps1 = 01-ConnectToSubscription.ps1
+		02-DeployCloudService.ps1 = 02-DeployCloudService.ps1
+		03-PrepareWADConfig.ps1 = 03-PrepareWADConfig.ps1
+		04-ConfigureWAD.ps1 = 04-ConfigureWAD.ps1
+		diagnostics.wadcfgx = diagnostics.wadcfgx
 	EndProjectSection
 EndProject
 Global

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
     <WadCfg>
       <DiagnosticMonitorConfiguration overallQuotaInMB="4096" sinks="applicationInsights.errors">
@@ -30,12 +30,12 @@
       </DiagnosticMonitorConfiguration>
       <SinksConfig>
         <Sink name="applicationInsights">
-          <ApplicationInsights>465b345d-df2f-440e-9d94-8af27d98ac91</ApplicationInsights>
+          <ApplicationInsights>YOUR-KEY-HERE</ApplicationInsights>
           <Channels>
             <Channel logLevel="Error" name="errors" />
           </Channels>
         </Sink>
       </SinksConfig>
     </WadCfg>
-    <StorageAccount>sergkanz</StorageAccount>
+    <StorageAccount>YOUR-STORAGE-ACCOUNT-HERE</StorageAccount>
 </PublicConfig>
